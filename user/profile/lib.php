@@ -198,7 +198,10 @@ class profile_field_base {
             $data->id = $dataid;
             $DB->update_record('user_info_data', $data);
         } else {
-            $DB->insert_record('user_info_data', $data);
+            // Create a database entry, only if data exists.
+            if ($data->data != '') {
+                $DB->insert_record('user_info_data', $data);
+            }
         }
     }
 
