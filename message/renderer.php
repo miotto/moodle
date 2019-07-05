@@ -283,6 +283,6 @@ class core_message_renderer extends plugin_renderer_base {
         }
         $context['privacychoices'] = $choices;
 
-        return $this->render_from_template('message/message_preferences', $context);
+        return $this->render_from_template('message/notification_preferences', $context);
     }
 }
